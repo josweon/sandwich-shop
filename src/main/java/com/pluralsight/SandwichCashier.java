@@ -3,8 +3,10 @@ package com.pluralsight;
 import java.util.*;
 
 public class SandwichCashier {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         System.out.print("Size of sandwich(1 or 2) ? ");
         int sandwichSize = scanner.nextInt();
 
@@ -15,8 +17,8 @@ public class SandwichCashier {
         } else if (sandwichSize == 2) {
             price = 8.95;
             System.out.printf("2:Large: base price $%.2f", price);
-
         } else {
+            price = 0;
             System.out.printf("size %d is not available", sandwichSize);
         }
 
