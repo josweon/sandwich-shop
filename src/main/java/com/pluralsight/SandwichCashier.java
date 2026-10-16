@@ -9,6 +9,7 @@ public class SandwichCashier {
 
         System.out.print("Size of sandwich(1 or 2) ? ");
         int sandwichSize = scanner.nextInt();
+        scanner.nextLine();
 
         double price = 0;
         if (sandwichSize == 1) {
@@ -22,6 +23,7 @@ public class SandwichCashier {
             System.out.printf("size %d is not available", sandwichSize);
         }
 
+        System.out.print("\n---");
         System.out.print("\nloaded(yes/no)? ");
         String loaded = scanner.nextLine();
 
@@ -33,23 +35,32 @@ public class SandwichCashier {
             extraCost = 1.75;
             System.out.print("$1.75 addon");
         } else {
+            System.out.print("no addons");
             extraCost = 0;
         }
 
+        System.out.print("\n---");
         System.out.print("\nHow old are you? ");
         int age = scanner.nextInt();
 
         double discount = 0;
         if (age <= 17) {
             discount = 0.1;
+            System.out.print("10% discount applied!");
         } else if (age >= 65) {
             discount = 0.2;
+            System.out.print("20% discount applied!");
         } else {
             discount = 0;
+            System.out.print("No discount");
         }
 
-        double total = price - (price * discount);
-        System.out.println("\n      ~~~Total~~~");
+        double subtotal = price + extraCost;
+        double total = subtotal - (subtotal * discount);
+
+        System.out.print("\n---");
+        System.out.println("\n       ~~~Total~~~");
         System.out.printf("Cost of sandwich is $%.2f", total);
+        System.out.print("\n");
     }
 }
