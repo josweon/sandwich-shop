@@ -22,6 +22,20 @@ public class SandwichCashier {
             System.out.printf("size %d is not available", sandwichSize);
         }
 
+        System.out.print("\nloaded(yes/no)? ");
+        String loaded = scanner.nextLine();
+
+        double extraCost = 0;
+        if (loaded.equals("yes") && sandwichSize == 1) {
+            extraCost = 1.00;
+            System.out.print("$1.00 addon");
+        } else if (loaded.equals("yes") && sandwichSize == 2) {
+            extraCost = 1.75;
+            System.out.print("$1.75 addon");
+        } else {
+            extraCost = 0;
+        }
+
         System.out.print("\nHow old are you? ");
         int age = scanner.nextInt();
 
